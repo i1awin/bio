@@ -28,23 +28,23 @@
 </div>
 
 <!-- Main content hidden initially -->
-<div class="container" id="main-content" style="opacity:0; display:flex; flex-direction:column; align-items:center;">
+<div class="container" id="main-content">
 
-<h1>/home/lawin</h1>
+  <h1>/home/lawin</h1>
 
-<img class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Avatar">
+  <img class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Avatar">
 
-<audio controls autoplay loop>
-  <source src="https://files.catbox.moe/8fij9c.mp3" type="audio/mpeg">
-</audio>
+  <audio controls autoplay loop>
+    <source src="https://files.catbox.moe/8fij9c.mp3" type="audio/mpeg">
+  </audio>
 
-<div class="links">
-  <a href="#"><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>
-  <a href="#"><i class="fa-solid fa-play"></i> Playlists</a>
-  <a href="#"><i class="fa-brands fa-telegram"></i> Telegram</a>
-  <a href="#"><i class="fa-brands fa-github"></i> Github</a>
-  <a href="#"><i class="fa-brands fa-steam"></i> Steam</a>
-</div>
+  <div class="links">
+    <a href="#"><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>
+    <a href="#"><i class="fa-solid fa-play"></i> Playlists</a>
+    <a href="#"><i class="fa-brands fa-telegram"></i> Telegram</a>
+    <a href="#"><i class="fa-brands fa-github"></i> Github</a>
+    <a href="#"><i class="fa-brands fa-steam"></i> Steam</a>
+  </div>
 
 </div>
 
@@ -62,17 +62,14 @@ particlesJS("particles-js", {
 });
 </script>
 
-<!-- Fixed intro click script -->
+<!-- Intro click fade -->
 <script>
 const intro = document.getElementById('intro');
 const mainContent = document.getElementById('main-content');
 
 intro.addEventListener('click', () => {
-  // Fade out intro
   intro.style.transition = 'opacity 1s ease';
   intro.style.opacity = '0';
-
-  // Fade in main content after fade out
   setTimeout(() => {
     intro.style.display = 'none';
     mainContent.style.transition = 'opacity 1s ease';
