@@ -1,6 +1,8 @@
 /* ---------------------------------- */
 /* General body and layout */
-body{
+body {
+  background: url('https://files.catbox.moe/0ip5qr.gif') no-repeat center center fixed;
+  background-size: cover;
   color:white;
   font-family: 'Inter', sans-serif;
   margin:0;
