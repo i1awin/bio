@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lawin.lol</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>lawin</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>lawin</h1>
-    </div>
+
+<!-- Snow background -->
+<div id="particles-js"></div>
+
+<!-- Intro overlay -->
+<div id="intro">
+  <div class="intro-content">
+    <h1>Click to Enter</h1>
+  </div>
+</div>
+
+<!-- Main content hidden initially -->
+<div class="container" id="main-content" style="opacity:0; display:flex; flex-direction:column; align-items:center;">
+
+<h1>/home/lawin</h1>
+
+<img class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Avatar">
+
+<audio controls autoplay loop>
+  <source src="https://files.catbox.moe/8fij9c.mp3" type="audio/mpeg">
+</audio>
+
+<div class="links">
+  <a href="#"><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>
+  <a href="#"><i class="fa-solid fa-play"></i> Playlists</a>
+  <a href="#"><i class="fa-brands fa-telegram"></i> Telegram</a>
+  <a href="#"><i class="fa-brands fa-github"></i> Github</a>
+  <a href="#"><i class="fa-brands fa-steam"></i> Steam</a>
+</div>
+
+</div>
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 120 },
+    "size": { "value": 3 },
+    "move": { "speed": 0.6 },
+    "opacity": { "value": 0.8 },
+    "line_linked": { "enable": false }
+  }
+});
+</script>
+
+<!-- Fixed intro click script -->
+<script>
+const intro = document.getElementById('intro');
+const mainContent = document.getElementById('main-content');
+
+intro.addEventListener('click', () => {
+  // Fade out intro
+  intro.style.transition = 'opacity 1s ease';
+  intro.style.opacity = '0';
+
+  // Fade in main content after fade out
+  setTimeout(() => {
+    intro.style.display = 'none';
+    mainContent.style.transition = 'opacity 1s ease';
+    mainContent.style.opacity = '1';
+  }, 1000);
+});
+</script>
+
 </body>
 </html>
