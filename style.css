@@ -1,8 +1,17 @@
 /* ---------------------------------- */
-/* Body & GIF background */
+/* GIF background as img */
+#bg-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* General body & layout */
 body{
-  background: url('https://files.catbox.moe/0ip5qr.gif') no-repeat center center fixed;
-  background-size: cover;
   color:white;
   font-family: 'Inter', sans-serif;
   margin:0;
