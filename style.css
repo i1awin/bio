@@ -1,4 +1,4 @@
-/* ---------------------------------- */
+/* --------------------------- */
 /* General body and layout */
 body{
   background:#000;
@@ -22,7 +22,7 @@ body{
   z-index:0;
 }
 
-/* ---------------------------------- */
+/* --------------------------- */
 /* Intro overlay */
 #intro{
   position:fixed;
@@ -42,17 +42,11 @@ body{
 #intro h1{
   color:white;
   font-size:48px;
-  margin:0 0 10px 0;
+  margin:0;
   text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
-#intro p{
-  color:white;
-  font-size:18px;
-  text-shadow: 0 0 6px rgba(255,255,255,0.4);
-}
-
-/* ---------------------------------- */
+/* --------------------------- */
 /* Main container */
 .container{
   text-align:center;
@@ -61,11 +55,27 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:center;
+  opacity:0;
+  transition: opacity 1s ease;
+  width: 90%;
+  max-width: 360px;
+  margin: 0 auto;
 }
 
-/* Avatar glow */
+/* Main name */
+.container h1{
+  font-size:2rem;
+  margin-bottom:20px;
+  color:#fff;
+  text-align:center;
+  text-shadow:0 0 8px rgba(255,255,255,0.3);
+}
+
+/* Avatar */
 .avatar{
   width:120px;
+  max-width:30%;
   border-radius:50%;
   margin-bottom:20px;
   box-shadow:0 0 25px rgba(255,255,255,0.3);
@@ -75,32 +85,29 @@ body{
 audio{
   margin-bottom:20px;
   width:250px;
+  max-width:90%;
   outline:none;
   border-radius:5px;
 }
 
-/* ---------------------------------- */
+/* --------------------------- */
 /* Glass buttons */
 .links a{
   display:block;
   width:240px;
-  margin:14px auto;
-  padding:15px;
+  max-width:100%;
+  margin:10px auto;
+  padding:14px;
   color:white;
   text-decoration:none;
-
   background:rgba(255,255,255,0.08);
   border-radius:12px;
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   border:1px solid rgba(255,255,255,0.2);
-
   font-weight:600;
   font-size:16px;
-
-  transition:0.25s;
+  transition:0.25s ease;
 }
 
 /* Button hover glow */
@@ -111,8 +118,8 @@ audio{
   transform:scale(1.05);
 }
 
-/* ---------------------------------- */
-/* Optional: responsive scaling */
+/* --------------------------- */
+/* Responsive adjustments */
 @media(max-width:480px){
   .avatar{
     width:90px;
@@ -125,8 +132,8 @@ audio{
   #intro h1{
     font-size:36px;
   }
-  #intro p{
-    font-size:16px;
+  .container h1{
+    font-size:1.6rem;
   }
   audio{
     width:200px;
