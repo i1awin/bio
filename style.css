@@ -1,15 +1,16 @@
 /* --------------------------- */
 /* General body and layout */
-body{
-  background:#000;
-  color:white;
+body {
+  background: url('https://files.fm/u/wcvwabgzxm') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
   font-family: 'Inter', sans-serif;
-  margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 /* Snow background */
