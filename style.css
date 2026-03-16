@@ -1,16 +1,26 @@
-/* --------------------------- */
+/* ---------------------------------- */
 /* General body and layout */
-body {
-  background: url('https://files.fm/u/wcvwabgzxm') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
+body{
+  color:white;
   font-family: 'Inter', sans-serif;
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* ---------------------------------- */
+/* Video background */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 /* Snow background */
@@ -23,7 +33,7 @@ body {
   z-index:0;
 }
 
-/* --------------------------- */
+/* ---------------------------------- */
 /* Intro overlay */
 #intro{
   position:fixed;
@@ -31,7 +41,7 @@ body {
   left:0;
   width:100%;
   height:100%;
-  background:#000;
+  background:rgba(0,0,0,0.5); /* semi-transparent over video */
   display:flex;
   justify-content:center;
   align-items:center;
@@ -47,7 +57,7 @@ body {
   text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
-/* --------------------------- */
+/* ---------------------------------- */
 /* Main container */
 .container{
   text-align:center;
@@ -82,7 +92,7 @@ body {
   box-shadow:0 0 25px rgba(255,255,255,0.3);
 }
 
-/* --------------------------- */
+/* ---------------------------------- */
 /* Glass buttons */
 .links a{
   display:block;
@@ -110,7 +120,7 @@ body {
   transform:scale(1.05);
 }
 
-/* --------------------------- */
+/* ---------------------------------- */
 /* Volume slider */
 #volume-control {
   position: fixed;
@@ -120,7 +130,7 @@ body {
   width: 120px;
 }
 
-/* --------------------------- */
+/* ---------------------------------- */
 /* Responsive adjustments */
 @media(max-width:480px){
   .avatar{
