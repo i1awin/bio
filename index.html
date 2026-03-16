@@ -17,11 +17,6 @@
 
 <body>
 
-<!-- Video background -->
-<video id="bg-video" autoplay muted loop playsinline>
-  <source src="https://files.fm/u/wcvwabgzxm" type="video/mp4">
-</video>
-
 <!-- Snow background -->
 <div id="particles-js"></div>
 
@@ -86,8 +81,8 @@ intro.addEventListener('click', () => {
     mainContent.style.transition = 'opacity 1s ease';
     mainContent.style.opacity = '1';
 
-    // Start audio instantly with fade-in
-    audio.volume = 0; // start muted
+    // Start audio with fade-in
+    audio.volume = 0;
     audio.play().then(() => {
       let targetVolume = volumeSlider.value;
       let vol = 0;
@@ -98,8 +93,8 @@ intro.addEventListener('click', () => {
         } else {
           clearInterval(fadeIn);
         }
-      }, 50); // ~1 second fade
-    }).catch((err) => {
+      }, 50);
+    }).catch(err => {
       console.log("Audio autoplay blocked:", err);
     });
   }, 1000);
