@@ -34,10 +34,6 @@
 
   <img class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Avatar">
 
-  <audio controls autoplay loop>
-    <source src="https://files.catbox.moe/8fij9c.mp3" type="audio/mpeg">
-  </audio>
-
   <div class="links">
     <a href="#"><i class="fa-brands fa-soundcloud"></i> SoundCloud</a>
     <a href="#"><i class="fa-solid fa-play"></i> Playlists</a>
@@ -47,6 +43,14 @@
   </div>
 
 </div>
+
+<!-- Hidden audio -->
+<audio id="bg-audio" loop>
+  <source src="YOUR_MP3_URL_HERE" type="audio/mpeg">
+</audio>
+
+<!-- Volume slider -->
+<input type="range" id="volume-control" min="0" max="1" step="0.01" value="0.5">
 
 <!-- Particles.js -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -62,19 +66,32 @@ particlesJS("particles-js", {
 });
 </script>
 
-<!-- Intro click fade -->
+<!-- Intro click + audio -->
 <script>
 const intro = document.getElementById('intro');
 const mainContent = document.getElementById('main-content');
+const audio = document.getElementById('bg-audio');
+const volumeSlider = document.getElementById('volume-control');
 
 intro.addEventListener('click', () => {
+  // Fade out intro
   intro.style.transition = 'opacity 1s ease';
   intro.style.opacity = '0';
+
+  // Fade in main content and start audio
   setTimeout(() => {
     intro.style.display = 'none';
     mainContent.style.transition = 'opacity 1s ease';
     mainContent.style.opacity = '1';
+
+    audio.volume = volumeSlider.value;
+    audio.play();
   }, 1000);
+});
+
+// Volume control
+volumeSlider.addEventListener('input', () => {
+  audio.volume = volumeSlider.value;
 });
 </script>
 
