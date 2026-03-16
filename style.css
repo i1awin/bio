@@ -1,7 +1,7 @@
 /* ---------------------------------- */
 body{
-  background-color: #000; /* makes background black */
-  color:white; /* optional so text is visible */
+  background-color: #0000; 
+  color:white; 
   font-family: 'Inter', sans-serif;
   margin:0;
   height:100vh;
