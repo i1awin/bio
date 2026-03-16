@@ -81,15 +81,6 @@ body{
   box-shadow:0 0 25px rgba(255,255,255,0.3);
 }
 
-/* Music player */
-audio{
-  margin-bottom:20px;
-  width:250px;
-  max-width:90%;
-  outline:none;
-  border-radius:5px;
-}
-
 /* --------------------------- */
 /* Glass buttons */
 .links a{
@@ -119,6 +110,16 @@ audio{
 }
 
 /* --------------------------- */
+/* Volume slider */
+#volume-control {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 10;
+  width: 120px;
+}
+
+/* --------------------------- */
 /* Responsive adjustments */
 @media(max-width:480px){
   .avatar{
@@ -134,8 +135,5 @@ audio{
   }
   .container h1{
     font-size:1.6rem;
-  }
-  audio{
-    width:200px;
   }
 }
