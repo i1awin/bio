@@ -44,7 +44,7 @@
 
 </div>
 
-<!-- Hidden audio -->
+<!-- Hidden audio, preloaded -->
 <audio id="bg-audio" loop preload="auto">
   <source src="YOUR_MP3_URL_HERE" type="audio/mpeg">
 </audio>
@@ -66,7 +66,7 @@ particlesJS("particles-js", {
 });
 </script>
 
-<!-- Intro click + audio -->
+<!-- Intro click + smooth audio fade-in -->
 <script>
 const intro = document.getElementById('intro');
 const mainContent = document.getElementById('main-content');
@@ -74,22 +74,35 @@ const audio = document.getElementById('bg-audio');
 const volumeSlider = document.getElementById('volume-control');
 
 intro.addEventListener('click', () => {
-  // Fade out intro
+  // Fade out intro overlay
   intro.style.transition = 'opacity 1s ease';
   intro.style.opacity = '0';
 
-  // Fade in main content and start audio
   setTimeout(() => {
     intro.style.display = 'none';
     mainContent.style.transition = 'opacity 1s ease';
     mainContent.style.opacity = '1';
 
-    audio.volume = volumeSlider.value;
-    audio.play();
+    // Start audio instantly with fade-in
+    audio.volume = 0; // start muted
+    audio.play().then(() => {
+      let targetVolume = volumeSlider.value;
+      let vol = 0;
+      const fadeIn = setInterval(() => {
+        if (vol < targetVolume) {
+          vol += 0.02;
+          audio.volume = Math.min(vol, targetVolume);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 50); // ~1 second fade
+    }).catch((err) => {
+      console.log("Audio autoplay blocked:", err);
+    });
   }, 1000);
 });
 
-// Volume control
+// Volume slider control
 volumeSlider.addEventListener('input', () => {
   audio.volume = volumeSlider.value;
 });
